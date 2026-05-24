@@ -105,7 +105,7 @@ export default function ProvidersMarquee() {
           </h2>
           <p style={{ fontSize: 13, color: "var(--w40)" }}>Vetted web3 freelancers &amp; agencies — hover to pause</p>
         </div>
-        <a href="#" style={{ fontSize: 13, color: "var(--gold)", display: "flex", alignItems: "center", gap: 5, textDecoration: "none", paddingRight: 24 }}>
+        <a href="/providers" style={{ fontSize: 13, color: "var(--gold)", display: "flex", alignItems: "center", gap: 5, textDecoration: "none", paddingRight: 24 }}>
           Browse all providers <IconArrowRight size={15}/>
         </a>
       </div>

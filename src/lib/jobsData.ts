@@ -358,7 +358,7 @@ export const defaultDetail = {
     "Offer and onboarding",
   ],
   companyMission: "Build the infrastructure and products that power the next generation of the internet.",
-  companyWebsite: "#",
+  companyWebsite: "https://web3jobshq.com",
   teamSize: "11–200 people",
   fundingStage: "Venture-backed",
 };

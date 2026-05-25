@@ -1,4 +1,5 @@
 "use client";
+import { useRouter } from "next/navigation";
 
 const chains = [
   { name: "Ethereum", logo: "/chains/eth.svg",   color: "#627EEA" },
@@ -12,12 +13,12 @@ const chains = [
 ];
 
 export default function ChainFilter() {
+  const router = useRouter();
+
   return (
     <div style={{
-      background: "var(--blue)",
-      borderBottom: "0.5px solid var(--bd)",
-      padding: "18px 24px",
-      display: "flex", alignItems: "center", gap: 16,
+      background: "var(--blue)", borderBottom: "0.5px solid var(--bd)",
+      padding: "18px 24px", display: "flex", alignItems: "center", gap: 16,
       overflowX: "auto",
     }}>
       <span style={{
@@ -28,13 +29,13 @@ export default function ChainFilter() {
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
         {chains.map(c => (
           <button key={c.name}
+            onClick={() => router.push(`/jobs?chain=${encodeURIComponent(c.name)}`)}
             style={{
               display: "flex", alignItems: "center", gap: 7,
               fontSize: 13, color: "var(--w60)",
               padding: "6px 14px", border: "0.5px solid var(--bd)",
               borderRadius: 999, cursor: "pointer", background: "transparent",
-              fontFamily: "var(--font-dm)", whiteSpace: "nowrap",
-              transition: "all 0.2s",
+              fontFamily: "var(--font-dm)", whiteSpace: "nowrap", transition: "all 0.2s",
             }}
             onMouseEnter={e => {
               const b = e.currentTarget;

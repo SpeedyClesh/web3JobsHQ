@@ -382,7 +382,7 @@ export default function JobDetail({ job, related }: Props) {
                     <h2 style={{ fontFamily: "var(--font-syne)", fontSize: 20, fontWeight: 800, color: "#fff", marginBottom: 4 }}>
                       {job.company}
                     </h2>
-                    <a href={detail.companyWebsite} target="_blank" rel="noreferrer"
+                    <a href={detail.companyWebsite.startsWith("http") ? detail.companyWebsite : "#"} target="_blank" rel="noreferrer"
                       style={{ fontSize: 13, color: "var(--sky)", textDecoration: "none", display: "flex", alignItems: "center", gap: 5 }}>
                       <IconWorld size={13}/>{detail.companyWebsite.replace("https://","")}
                     </a>

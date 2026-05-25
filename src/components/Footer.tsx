@@ -23,7 +23,7 @@ const forHirers = [
 
 const company = [
   { label: "About HQ",       href: "/about" },
-  { label: "Newsletter",     href: "/#newsletter" },
+  { label: "Newsletter",     href: "/" },
   { label: "Press kit",      href: "/about" },
   { label: "Terms of service",href: "/about" },
   { label: "Privacy policy", href: "/about" },

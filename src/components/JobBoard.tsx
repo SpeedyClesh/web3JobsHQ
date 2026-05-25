@@ -1,5 +1,6 @@
 "use client";
-import { useState, useMemo } from "react";
+import { useSearchParams } from "next/navigation";
+import { useState, useMemo, useEffect } from "react";
 import Image from "next/image";
 import {
   IconSearch, IconFilter, IconShieldCheck, IconFlame,
@@ -32,6 +33,15 @@ export default function JobBoard() {
   const [page, setPage]               = useState(1);
   const [saved, setSaved]             = useState<number[]>([]);
   const [sidebarOpen, setSidebarOpen] = useState(true);
+
+  // Read URL search params (?q=, ?chain=) on mount
+  const searchParams = useSearchParams();
+  useEffect(() => {
+    const q = searchParams.get("q");
+    const c = searchParams.get("chain");
+    if (q) setSearch(q);
+    if (c) setChain(c);
+  }, [searchParams]);
 
   const toggleSave = (id: number) =>
     setSaved(s => s.includes(id) ? s.filter(x => x !== id) : [...s, id]);
